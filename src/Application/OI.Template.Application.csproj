@@ -7,11 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="ToDoItem\Queries" />
-      <Folder Include="ToDoList\EventHandlers" />
-      <Folder Include="ToDoList\Queries" />
-      <Folder Include="WeatherForecast\Commands" />
-      <Folder Include="WeatherForecast\EventHandlers" />
+      <Folder Include="Common\Mapping\" />
     </ItemGroup>
 
     <ItemGroup>

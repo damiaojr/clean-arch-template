@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using FluentValidation;
 using MediatR;
-using OI.Template.Application.Common.Behaviours;
+using OI.Template.Application.Behaviours;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

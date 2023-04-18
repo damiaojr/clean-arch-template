@@ -20,6 +20,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Application\OI.Template.Application.csproj" />
+      <ProjectReference Include="..\Contract\OI.Template.Contract.csproj" />
     </ItemGroup>
 
     <ItemGroup>

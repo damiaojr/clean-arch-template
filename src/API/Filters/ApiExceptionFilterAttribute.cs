@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using OI.Template.Application.Common.Exceptions;
+using OI.Template.Application.Exceptions;
 
 namespace OI.Template.API.Filters;
 

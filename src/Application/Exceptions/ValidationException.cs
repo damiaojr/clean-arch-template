@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
-namespace OI.Template.Application.Common.Exceptions;
+
+namespace OI.Template.Application.Exceptions;
 
 public class ValidationException : Exception
 {
