@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace OI.Template.Application.Notification.Commands;
+namespace OI.Template.Application.Notification.Commands.SendPushNotification;
 
 public class PushNotificationCommandValidator : AbstractValidator<PushNotificationCommand>
 {

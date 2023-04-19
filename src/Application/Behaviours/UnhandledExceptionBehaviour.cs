@@ -22,7 +22,7 @@ public class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavio
         {
             var requestName = typeof(TRequest).Name;
             
-            _logger.LogError(exception, "API Request: Unhandled exception for {Name} {@Request}", requestName, request);
+            _logger.LogError(exception, "Request: Unhandled exception for {Name} {@Request}", requestName, request);
 
             throw;
         }

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using OI.Template.Domain.Events.NotificationEvents;
 
-namespace OI.Template.Application.Notification.Commands;
+namespace OI.Template.Application.Notification.Commands.SendPushNotification;
 
 public record PushNotificationCommand : IRequest<Guid>
 {
