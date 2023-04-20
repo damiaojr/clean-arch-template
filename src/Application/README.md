@@ -1,5 +1,7 @@
 # APPLICATION
 
-This layer contains all application logic. 
+This layer contains the application logic. It handles the CQRS and domain events. 
 
-It is dependent on the domain layer, but has no dependencies on any other layer or project. This layer defines interfaces that are implemented by outside layers. For example, if the application needs to access a database, a new interface would be added to application and an implementation would be created within  infrastructure.
+It is dependent on the domain layer, but has no dependencies on any other layer or project.
+
+The persistence layer is accessed by Domain interfaces.

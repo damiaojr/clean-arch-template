@@ -2,6 +2,7 @@
 using FluentValidation;
 using MediatR;
 using OI.Template.Application.Behaviours;
+using OI.Template.Domain.Repository;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

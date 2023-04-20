@@ -17,9 +17,11 @@ public class NotificationController : ApiControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Guid>> Post(Notification notification)
+    public async Task<ActionResult<Notification>> Post(Notification notification)
     {
-        return await Mediator.Send(_mapper.Map<PushNotificationCommand>(notification));
+        var createdNotification = await Mediator.Send(_mapper.Map<PushNotificationCommand>(notification));
+        var createdUrl = Url.Link("/api/v1/notification", new { id = createdNotification.Id });
+        return Created(createdUrl, notification);
     }
 
     [HttpGet("{id:guid}")]

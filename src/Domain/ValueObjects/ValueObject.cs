@@ -1,9 +1,8 @@
 ﻿namespace OI.Template.Domain.ValueObjects;
 
-// Learn more: https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/implement-value-objects
-public abstract class BaseValueObject
+public abstract class ValueObject
 {
-    protected static bool EqualOperator(BaseValueObject left, BaseValueObject right)
+    protected static bool EqualOperator(ValueObject left, ValueObject right)
     {
         if (left is null ^ right is null)
         {
@@ -13,7 +12,7 @@ public abstract class BaseValueObject
         return left?.Equals(right!) != false;
     }
 
-    protected static bool NotEqualOperator(BaseValueObject left, BaseValueObject right)
+    protected static bool NotEqualOperator(ValueObject left, ValueObject right)
     {
         return !(EqualOperator(left, right));
     }
@@ -27,7 +26,7 @@ public abstract class BaseValueObject
             return false;
         }
 
-        var other = (BaseValueObject)obj;
+        var other = (ValueObject)obj;
         return GetEqualityComponents().SequenceEqual(other.GetEqualityComponents());
     }
 

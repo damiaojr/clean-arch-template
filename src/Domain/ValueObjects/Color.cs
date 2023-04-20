@@ -2,7 +2,7 @@
 
 namespace OI.Template.Domain.ValueObjects;
 
-public class Colour : BaseValueObject
+public class Colour : ValueObject
 {
     static Colour() {}
     private Colour() {}
