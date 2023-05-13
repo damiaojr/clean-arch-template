@@ -20,9 +20,11 @@ public class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavio
         }
         catch (Exception exception)
         {
+            //ToDo: Filter exceptions that we don't want to log
+            
             var requestName = typeof(TRequest).Name;
             
-            _logger.LogError(exception, "Request: Unhandled exception for {Name} {@Request}", requestName, request);
+            _logger.LogError(exception, "Request Error: Unhandled exception for {Name} {@Request}", requestName, request);
 
             throw;
         }

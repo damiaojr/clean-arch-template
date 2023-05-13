@@ -19,6 +19,7 @@ public static class ConfigureServices
                configuration.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
                configuration.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
           });
+          
 
           return serviceCollection;
      }

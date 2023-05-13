@@ -27,15 +27,34 @@ public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
     private void HandleException(ExceptionContext context)
     {
         var type = context.Exception.GetType();
-        if (!_exceptionHandlers.ContainsKey(type)) return;
-        _exceptionHandlers[type].Invoke(context);
+        if (!_exceptionHandlers.ContainsKey(type)) 
+            UnhandledException(context);
+        else
+            _exceptionHandlers[type].Invoke(context);
+    }
+
+    private void UnhandledException(ExceptionContext context)
+    {
+        var details = new ProblemDetails
+        {
+            Status = StatusCodes.Status500InternalServerError,
+            Title = "Internal Server Error",
+            Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1"
+        };
+
+        context.Result = new ObjectResult(details)
+        {
+            StatusCode = StatusCodes.Status500InternalServerError
+        };
+
+        context.ExceptionHandled = true;
     }
     
     private void HandleNotFoundException(ExceptionContext context)
     {
         var exception = (NotFoundException)context.Exception;
 
-        var details = new ProblemDetails()
+        var details = new ProblemDetails
         {
             Type = "https://tools.ietf.org/html/rfc7231#section-6.5.4",
             Title = "The specified resource was not found.",

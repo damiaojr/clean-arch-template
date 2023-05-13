@@ -7,12 +7,12 @@ public class NotificationMappingProfile : Profile
 {
     public NotificationMappingProfile()
     {
-        CreateMap<OI.Template.Contract.Notification, PushNotificationCommand>()
+        CreateMap<Contract.Notification, PushNotificationCommand>()
             .ForMember(
                 dest => dest.Title,
                 opt => opt.MapFrom(src => src.Title));
         
-        CreateMap<OI.Template.Domain.Entities.Notification, OI.Template.Contract.Notification>()
+        CreateMap<Domain.Entities.Notification, Contract.Notification>()
             .ForMember(
                 dest => dest.Id,
                 opt => opt.MapFrom(src => src.Id))

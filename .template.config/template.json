@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "mytechramblings.com",
+    "classifications": [
+      "Cloud",
+      "Service",
+      "Web"
+    ],
+    "name": "OI Web Service Template",
+    "description": "Ocean Infinity API template built using NET Core 7",
+    "identity": "OI.Template",
+    "shortName": "oi-api-template",
+    "defaultName": "OI.Template",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "sourceName": "OI.Template",
+    "preferNameDirectory": true
+  }

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using OI.Template.Domain.Repository;
 using OI.Template.Infrastructure.Configuration;
+using OI.Template.Infrastructure.Persistence;
 using OI.Template.Infrastructure.Persistence.Notification;
 
 namespace Microsoft.Extensions.DependencyInjection;
@@ -16,7 +17,13 @@ public static class ConfigureServices
                 builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName));
         });
 
+        serviceCollection.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
+        serviceCollection.AddScoped<ApplicationDbContextInitializer>();
         serviceCollection.AddScoped<INotificationRepository, NotificationRepository>();
+        serviceCollection.AddScoped<IBlobStorageRepository, AzureBlobRepository>();
+        
+        serviceCollection.Configure<AzureConfiguration>(configuration.GetSection("AzureConfiguration"));
+        serviceCollection.AddSingleton<IBlobStorageRepository, AzureBlobRepository>();
             
         return serviceCollection;
     }

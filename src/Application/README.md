@@ -1,12 +1,15 @@
 # APPLICATION
 
-This layer contains the application logic. It handles the CQRS and domain events.
+The application layer is responsible for implementing the business logic of the application and providing the functionality that users need. 
 
-It is dependent on the domain layer, but has no dependencies on any other layer or project.
+The main responsibilities of the application layer include:
 
-The persistence layer is accessed by Domain interfaces.
+- Receiving and processing user requests: The application layer is responsible for processing user requests, validating them, and producing the appropriate responses. This includes handling errors and exceptions that may occur during the processing of requests.
+- Implementing business logic: The application layer implements the business logic of the application, which defines the rules and processes that govern how the application operates. This includes processing data, performing calculations, and enforcing business rules.
+- Accessing data: The application layer interacts with the infrastructure layer to retrieve and manipulate data as needed. This includes reading and writing data to a database or other storage system.
+- Providing a high-level interface: The application layer provides a high-level interface that abstracts the underlying implementation details of the system. This allows other systems or users to interact with the application without needing to know the details of how it works.
 
-#### CQRS
+## CQRS
 
 CQRS (Command Query Responsibility Segregation) is a design pattern that separates the responsibility of handling commands (i.e., operations that change the state of the system) from that of handling queries (i.e., operations that retrieve data from the system).
 
@@ -63,7 +66,7 @@ foreach (var product in products) {
 }
 ```
 
-#### FluentValidation
+## FluentValidation
 
 FluentValidation is a .NET library that provides a fluent API for building strongly-typed validation rules. It allows developers to define complex validation logic in a simple, expressive manner, using a fluent interface that makes it easy to read and understand.
 

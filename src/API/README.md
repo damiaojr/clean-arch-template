@@ -1,14 +1,14 @@
 # API
 
-The entry point layer for HTTP connections.
+An API (Application Programming Interface) is a set of rules, protocols, and tools that allow software applications to communicate with each other. APIs define how software components should interact, specifying the types of requests and responses that can be sent and received.
 
-It should not have any business logic, but it can have input validations. It also initializes the other layers using dependency injection.
+APIs can be internal or external to an organization, and they can be used to enable integration between different systems, services, or applications. For example, an API can be used by a web application to retrieve data from a database, or by a mobile application to access cloud-based services.
 
-It should not create new instances of Domain classes, but it can receive them from the Application layer.
+APIs can be implemented in many different ways, such as REST (Representational State Transfer), SOAP (Simple Object Access Protocol), and GraphQL. They can be designed for specific purposes, such as data access, authentication, or messaging.
 
-The communication with the application layer must be done using [Mediatr](https://github.com/jbogard/MediatR) and it should only expose **Contract** classes.
+*The communication with the application layer must be done using [Mediatr](https://github.com/jbogard/MediatR) and it should only expose **Contract** classes.*
 
-#### MediatR
+## MediatR
 
 MediatR is a popular open-source library for implementing the mediator pattern in .NET applications. The mediator pattern is a design pattern that promotes loose coupling between components by allowing them to communicate through a mediator object, instead of directly invoking each other's methods.
 
@@ -43,7 +43,7 @@ Console.WriteLine(response); // Output: 84
 
 ```
 
-#### AutoMapper
+## AutoMapper
 
 AutoMapper is an open-source library for mapping data between different objects in .NET applications. It provides a convenient and flexible way to convert data from one format to another without having to write a lot of boilerplate code.
 

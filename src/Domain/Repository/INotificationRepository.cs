@@ -4,5 +4,7 @@ namespace OI.Template.Domain.Repository;
 
 public interface INotificationRepository
 {
-    Task<Notification> InsertNotificationAsync(Notification notification);
+    Task<IEnumerable<Notification>> GetAllAsync();
+    Task<Notification?> GetByIdAsync(Guid id);
+    Task<Notification> CreateAsync(Notification notification);
 }

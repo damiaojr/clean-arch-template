@@ -25,9 +25,10 @@ public class PushNotificationCommandHandler : IRequestHandler<PushNotificationCo
     public async Task<Domain.Entities.Notification> Handle(PushNotificationCommand request, CancellationToken cancellationToken)
     {
         var entity = _mapper.Map<Domain.Entities.Notification>(request);
+        entity.CreatedBy = "damiao";
         
         entity.AddDomainEvent(new SendNotificationEvent(entity));
 
-        return await _notificationRepository.InsertNotificationAsync(entity);
+        return await _notificationRepository.CreateAsync(entity);
     }
 }
